@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/plantilla/plantillaui">
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+	<div layout:fragment="contenidopaginas" class="container-fluid">
+		<form th:action="@{/grupo/guardar}" th:object="${grupo}" method="post">
+			<div class="mb-3">
+				<label for="nombre" class="form-label">Nombre</label> <input
+					type="text" class="form-control" th:field="*{nombre}" id="nombre">
+			</div>
+			<div class="mb-3">
+				<label for="descripcion" class="form-label">Descripción</label> <input
+					type="text" class="form-control" th:field="*{descripcion}"
+					id="descripcion">
+			</div>
+			<div class="mb-3 form-check">
+				<input type="checkbox" class="form-check-input"
+					th:field="*{estadoRegistro}" id="estado"> <label
+					class="form-check-label" for="estado">Activo</label>
+			</div>
+			<button type="submit" class="btn btn-primary">Guardar</button>
+		</form>
+	</div>
+</body>
+
+</html>

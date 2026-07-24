@@ -1,10 +1,13 @@
 package com.uisrael.consumoweb.model.dto.response;
 
+
+
 public class SeleccionResponseDto {
 	private int idSeleccion;
 	private String nombre;
 	private String descripcion;
 	private boolean estadoRegistro;
+	private GrupoResponseDto fkGrupo;
 	
 	public int getIdSeleccion() {
 		return idSeleccion;
@@ -29,5 +32,11 @@ public class SeleccionResponseDto {
 	}
 	public void setEstadoRegistro(boolean estadoRegistro) {
 		this.estadoRegistro = estadoRegistro;
+	}
+	public GrupoResponseDto getFkGrupo() {
+		return fkGrupo;
+	}
+	public void setFkGrupo(GrupoResponseDto fkGrupo) {
+		this.fkGrupo = fkGrupo;
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,5 +40,11 @@ public class GrupoController {
 	public String guardarGrupo(@ModelAttribute GrupoRequestDto grupo) {
 		servicioGrupo.guardarGrupo(grupo);
 		return "redirect:/grupo";
+	}
+
+	@GetMapping("/editar/{idGrupo}")
+	public String editar(@PathVariable int idGrupo, Model model) {
+		model.addAttribute("grupo", servicioGrupo.buscarPorId(idGrupo));
+		return "grupos/creargrupo";
 	}
 }

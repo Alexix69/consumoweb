@@ -9,4 +9,6 @@ public interface IGrupoService {
 	List<GrupoResponseDto> listarGrupos();
 	
 	void guardarGrupo(GrupoRequestDto nuevo);
+	
+	GrupoResponseDto buscarPorId(int idGrupo);
 }

@@ -10,6 +10,8 @@
 <body>
 	<div layout:fragment="contenidopaginas" class="container-fluid">
 		<form th:action="@{/grupo/guardar}" th:object="${grupo}" method="post">
+			<input type="hidden" class="form-control" th:field="*{idGrupo}"
+				id="idGrupo">
 			<div class="mb-3">
 				<label for="nombre" class="form-label">Nombre</label> <input
 					type="text" class="form-control" th:field="*{nombre}" id="nombre">

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.util.UriBuilder;
 
 import com.uisrael.consumoweb.model.dto.request.GrupoRequestDto;
 import com.uisrael.consumoweb.model.dto.response.GrupoResponseDto;
@@ -28,4 +29,9 @@ public class GrupoServiceImpl implements IGrupoService {
 		webClient.post().uri("/grupo").bodyValue(nuevo).retrieve().toBodilessEntity().block();
 	}
 
+	@Override
+	public GrupoResponseDto buscarPorId(int idGrupo) {
+		return webClient.get().uri(uriBuilder -> uriBuilder.path("/grupo/buscar/{idGrupo}").build(idGrupo)).retrieve()
+				.bodyToMono(GrupoResponseDto.class).block();
+	}
 }

@@ -25,7 +25,8 @@
 					<td th:text="${grupo.nombre}"></td>
 					<td th:text="${grupo.descripcion}"></td>
 					<td th:text="${grupo.estadoRegistro}"></td>
-					<td><a href=" " class="btn btn-primary" title="Editar"><i
+					<td><a th:href="@{/grupo/editar/{idGrupo}(idGrupo=${grupo.idGrupo})}"
+						class="btn btn-primary" title="Editar"><i
 							class="ti-pencil-alt"></i></a> <a href=" " class="btn btn-danger"
 						title="Eliminar"><i class="ti-trash"></i></a></td>
 				</tr>

@@ -8,4 +8,5 @@ public class SeleccionRequestDto {
 	private String nombre;
 	private String descripcion;
 	private boolean estadoRegistro;
+	private GrupoRequestDto fkGrupo;
 }
